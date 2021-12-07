@@ -74,7 +74,18 @@ Scenario 2: User can change the number of events they want to see
 * Then a the page will show the number of events specified by the user
 
 
-## FEATURE 4: USE THE APP WHEN OFFLINE
+
+## Feature 4: ADD AN APP SHORTCUT TO THE HOMESCREEN
+
+Scenario 1: User click's app shortcut
+
+* Given a user has an app shortcut on their device
+* When user clicks on shortcut icon
+* Then app will open  
+
+
+## FEATURE 5: USE THE APP WHEN OFFLINE
+
 Scenario 1: Show cached data when there’s no internet connection
 
 
@@ -90,7 +101,7 @@ Scenario 2: Show error when user changes the settings (city, time range)
 * When user changes the city, time range
 * Then show an error that indicates the user cannot make changes while offline.
 
-FEATURE 5: DATA VISUALIZATION
+FEATURE 6: DATA VISUALIZATION
 
 Scenario 1: Show a chart with the number of upcoming events in each city
 
