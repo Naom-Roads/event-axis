@@ -21,7 +21,8 @@ const { client_secret, client_id, redirect_uris, calendar_id } = credentials;
 const oAuth2Client = new google.auth.OAuth2(
     client_id,
     client_secret,
-    redirect_uris[0]
+    redirect_uris[0],
+    calendar_id
 );
 
 module.exports.getAuthURL = async () => {
