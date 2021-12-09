@@ -17,7 +17,6 @@
 </style>
 
 <body>
-
 <main id="container">
     <h1>OAuth2 Test</h1>
     <h4><b>Step 1:</b> Get the Auth URL</h4>
@@ -25,9 +24,20 @@
     <button id="getCode">Get OAuth URL</button>
     <p id="result"></p>
     <a id="authURL" href target="_blank">Click to authorise</a>
+
+    <!-- STEP 2 -->
+    <h4> Step 2: Get your code and exchange for an access token</h4>
+    <p> After you're redirected back to EventAxis on Github, copy the code from the URI</p>
+    <br />
+
+    <label>Code Input
+    <input id="code" type="text" value="" />
+    </label>
+    <button id="getToken">Get Token</button>
+    <p id="accessToken"></p>
 </main>
 
-<script type="text/javascript">fetch()
+<script type="text/javascript">
     const getCodeElement = document.getElementById("getCode");
     const resultElement = document.getElementById("result");
     const resultLink = document.getElementById("authURL");
