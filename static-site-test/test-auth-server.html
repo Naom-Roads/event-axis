@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Test Auth Server</title>
+</head>
+<style>
+    #container {
+        max-width: 500px;
+    }
+    h4 {
+        margin-top: 25px;
+    }
+</style>
+
+<body>
+
+<main id="container">
+    <h1>OAuth2 Test</h1>
+    <h4><b>Step 1:</b> Get the Auth URL</h4>
+    <p>Click the button below to get your auth url.</p>
+    <button id="getCode">Get OAuth URL</button>
+    <p id="result"></p>
+    <a id="authURL" href target="_blank">Click to authorise</a>
+</main>
+
+<script type="text/javascript">fetch()
+    const getCodeElement = document.getElementById("getCode");
+    const resultElement = document.getElementById("result");
+    const resultLink = document.getElementById("authURL");
+    const getAuthURL = "https://4wd20fx2h9.execute-api.us-east-2.amazonaws.com/dev/api/get-auth-url";
+
+    getCodeElement.onclick = function () {
+        fetch(getAuthURL)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (json) {
+            const result = JSON.stringify(json);
+            const { authUrl } = JSON.parse(result);
+            resultElement.innerText = result;
+            resultLink.href = authUrl;
+        });
+    };
+
+</script>
+</body>
+
+
+</html>
