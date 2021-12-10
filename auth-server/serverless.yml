@@ -40,6 +40,12 @@ functions:
       - http:
           path: api/get-auth-url
           method: get
+  getAccessToken:
+    handler: handler.getAccessToken
+    events:
+      - http:
+          path: api/token/{code}
+          method: get
 
   # you can overwrite defaults here
   #  stage: dev
@@ -126,3 +132,8 @@ functions:
 #     NewOutput:
 #       Description: "Description for the output"
 #       Value: "Some output value"
+
+
+# For TESTING LATER
+#  GET - https://4wd20fx2h9.execute-api.us-east-2.amazonaws.com/dev/api/get-auth-url
+#  GET - https://4wd20fx2h9.execute-api.us-east-2.amazonaws.com/dev/api/token/{code}
