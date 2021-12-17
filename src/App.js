@@ -9,6 +9,7 @@ class App extends Component {
             <div className="App">
                 <CitySearch/>
                 <EventList/>
+
             </div>
         );
     }
