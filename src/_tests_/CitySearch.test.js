@@ -4,7 +4,7 @@ import CitySearch from "../CitySearch";
 import { mockData } from "../mock-data";
 import { extractLocations } from "../api";
 
-describe ('<CitySearch> component', () => {
+describe ('<CitySearch /> component', () => {
     let locations, CitySearchWrapper;
     beforeAll(() => {
         locations = extractLocations(mockData);
@@ -56,3 +56,4 @@ describe ('<CitySearch> component', () => {
         expect(CitySearchWrapper.state("query")).toBe(suggestions[0]);
         });
 });
+
