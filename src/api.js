@@ -23,7 +23,7 @@ export const getAccessToken = async () => {
         const searchParams = new URLSearchParams(window.location.search);
         const code = await searchParams.get("code");
         if (!code) {
-            const results = await axios.get("https://4wd20fx2h9.execute-api.us-east-2.amazonaws.com/dev/api/get-auth-url");
+            const results = await axios.get('https://4wd20fx2h9.execute-api.us-east-2.amazonaws.com/dev/api/get-auth-url');
             const {authUrl} = results.data;
             return (window.location.href = authUrl);
         }
@@ -51,7 +51,7 @@ export const getEvents = async () => {
 
     if (token) {
         removeQuery();
-        const url = 'https://4wd20fx2h9.execute-api.us-east-2.amazonaws.com/dev/api/get-events/' + token;
+        const url = ('https://4wd20fx2h9.execute-api.us-east-2.amazonaws.com/dev/api/get-events/' + token);
         const result = await axios.get(url);
         if (result.data) {
             var locations = extractLocations(result.data.events);
