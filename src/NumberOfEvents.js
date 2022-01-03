@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Alert, Dropdown } from 'react-bootstrap';
+import { Dropdown } from 'react-bootstrap';
 
 
 class NumberOfEvents extends Component {
@@ -8,21 +8,19 @@ class NumberOfEvents extends Component {
 		errorMsg: ''
 	};
 
-	handleSelect = (event) => {
-		console.log(event);
-		const value = event.target.value;
-		if ( value < 1 ) {
+	handleSelect = (numberOfEvents) => {
+		if ( numberOfEvents < 1 ) {
 			this.setState({
 				numberOfEvents: '',
 				infoMsg: 'Please select the number of events you would like to see'
 			});
 		} else {
 			this.setState({
-				numberOfEvents: value,
+				numberOfEvents: numberOfEvents,
 				errorMsg: ''
 			});
 		}
-		this.props.updateNumberofEvents(event.target.value);
+		this.props.updateEvents(undefined, numberOfEvents);
 	};
 
 
@@ -31,20 +29,18 @@ class NumberOfEvents extends Component {
 		return (
 			<div className="NumberOfEvents">
 
-				<Dropdown>
+				<Dropdown onSelect={this.handleSelect}>
 					<Dropdown.Toggle variant="dark" className="number-of-events mt-3" id="dropdown-basic">
 						Number Of Events
 					</Dropdown.Toggle>
 
 					<Dropdown.Menu
-
 						title="Number of events dropdown"
-						type='number'
-						value={this.state.numberOfEvents}
-						onSelect={this.handleSelect}
+						id="select-event"
+
 					>
 					{[5, 10, 15, 20, 25, 30, 35].map(numberOfEvents => (
-						<Dropdown.Item eventKey={numberOfEvents}>{numberOfEvents}</Dropdown.Item>
+						<Dropdown.Item key={numberOfEvents} eventKey={numberOfEvents}>{numberOfEvents}</Dropdown.Item>
 					))}
 					</Dropdown.Menu>
 				</Dropdown>
@@ -56,13 +52,3 @@ class NumberOfEvents extends Component {
 
 export default NumberOfEvents;
 
-{/*	<p><b>Number of Events:</b></p>*/}
-{/*	<input*/}
-{/*		type="number"*/}
-{/*		name="number"*/}
-{/*		className="number-of-events"*/}
-{/*		value={this.props.numberOfEvents}*/}
-{/*		onChange={(e) => this.handleInputChanged(e)}*/}
-{/*	/>*/}
-{/*	<ErrorAlert text={this.state.errorText} />*/}
-{/*</div>*/}

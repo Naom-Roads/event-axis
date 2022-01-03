@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Event from "./Event";
-import NumberOfEvents from './NumberOfEvents';
 import Col  from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card'
