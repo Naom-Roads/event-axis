@@ -32,7 +32,7 @@ class NumberOfEvents extends Component {
 			<div className="NumberOfEvents">
 
 				<Dropdown>
-					<Dropdown.Toggle className="number-of-events mt-3" variant="#4CB944" id="dropdown-basic">
+					<Dropdown.Toggle variant="dark" className="number-of-events mt-3" id="dropdown-basic">
 						Number Of Events
 					</Dropdown.Toggle>
 
