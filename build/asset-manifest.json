@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Naom-Roads/event-axis.git/static/css/main.308e34a0.css",
+    "main.js": "/Naom-Roads/event-axis.git/static/js/main.fb262bea.js",
+    "static/js/377.dda790c9.chunk.js": "/Naom-Roads/event-axis.git/static/js/377.dda790c9.chunk.js",
+    "service-worker.js": "/Naom-Roads/event-axis.git/service-worker.js",
+    "index.html": "/Naom-Roads/event-axis.git/index.html",
+    "main.308e34a0.css.map": "/Naom-Roads/event-axis.git/static/css/main.308e34a0.css.map",
+    "main.fb262bea.js.map": "/Naom-Roads/event-axis.git/static/js/main.fb262bea.js.map",
+    "377.dda790c9.chunk.js.map": "/Naom-Roads/event-axis.git/static/js/377.dda790c9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.308e34a0.css",
+    "static/js/main.fb262bea.js"
+  ]
+}

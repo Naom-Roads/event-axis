@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Event from "./Event";
+import NumberOfEvents from './NumberOfEvents';
 
 class EventList extends Component {
     render() {

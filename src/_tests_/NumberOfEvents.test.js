@@ -8,13 +8,13 @@ describe ('<NumberOfEvents> component', () => {
         NumberOfEventsWrapper = shallow(<NumberOfEvents NumberOfEvents={NumberOfEventsWrapper}/>);
     });
 
-    test('renders 32 events on the list by default', () => {
-    expect(NumberOfEventsWrapper.state('query')).toEqual(32);
+    test('renders 20 events on the list by default', () => {
+    expect(NumberOfEventsWrapper.state('query')).toEqual(20);
 });
 
     test('Number of Events changes when given an input by user', () => {
         NumberOfEventsWrapper.find('input').simulate('change', {
-            target: { value: 50 },
+            target: { value: 19 },
         });
         expect(NumberOfEventsWrapper.state('query')).toEqual(NumberOfEventsWrapper.state('query'))
     });
