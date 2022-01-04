@@ -37,12 +37,11 @@ class NumberOfEvents extends Component {
 						id="select-event"
 
 					>
-					{[5, 10, 15, 20, 25, 30, 35].map(numberOfEvents => (
+					{[5, 10, 15, 20, 25, 30, 35].map((numberOfEvents) => (
 						<Dropdown.Item key={numberOfEvents} eventKey={numberOfEvents}>{numberOfEvents}</Dropdown.Item>
 					))}
 					</Dropdown.Menu>
 				</Dropdown>
-
 			</div>
 		);
 	}
