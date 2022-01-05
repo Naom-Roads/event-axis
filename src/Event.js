@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Button               from 'react-bootstrap/Button';
+import Button       from 'react-bootstrap/Button';
 
 class Event extends Component {
 
 	state = {
-		details: true
+		details: false
 	};
 
 	showDetails = () => {
@@ -18,19 +18,15 @@ class Event extends Component {
 		const {details} = this.state;
 		return (
 			<div className="event">
-
 				<h2 className="summary">{event.summary}</h2>
-
 				<p className="start-date">{event.start.dateTime} ({event.start.timeZone})</p>
-				<p className="location">@{event.summary} | {event.location}</p>
-
-				<Button variant="outline-info"
-				        className={`${details ? 'show' : 'hide'}-details`} onClick={this.showDetails}
-				>
-					{details ? "Show Details" : "Hide Details"}
+				<p className="location">{event.summary} | {event.location}</p>
+				<Button variant="outline-info" title="Button that shows and hides details"
+				        className={`${details ? 'show' : 'hide'}-details`} onClick={this.showDetails}>
+					{!details ? "Show Details" : "Hide Details"}
 				</Button>
 
-				{!details &&
+				{details &&
 				<div className={`extra-details ${this.state.details
 					? "hide" : "show"}`}>
 					<h3>Event Details:</h3>

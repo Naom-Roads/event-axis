@@ -31,8 +31,6 @@ class App extends Component {
 	}
 
 	updateEvents = (location, eventCount) => {
-		console.log(eventCount);
-
 		getEvents().then((events) => {
 			let locationEvents;
 			if (location) {
@@ -43,7 +41,6 @@ class App extends Component {
 			} else {
 				locationEvents = (this.state.location === 'all') ? events : events.filter((event) => event.location === this.state.location);
 			}
-			console.log(locationEvents);
 			if (eventCount) {
 				this.setState({
 					numberOfEvents: eventCount
