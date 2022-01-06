@@ -63,7 +63,7 @@ describe('<App /> integration', () => {
 		// const searchInput = AppWrapper.find(CitySearch).find('.city');
 		// await searchInput.at(0).simulate('focus');
 		const suggestionItems = AppWrapper.find(CitySearch).find('.suggestions li');
-		await suggestionItems.at(suggestionItems.length - 1).simulate('click');
+		await suggestionItems.at(suggestionItems.length - 1).simulate('focus');
 		const allEvents = await getEvents();
 		expect(AppWrapper.state('events')).toEqual(allEvents);
 		AppWrapper.unmount();

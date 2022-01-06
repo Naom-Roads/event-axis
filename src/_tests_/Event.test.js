@@ -19,7 +19,7 @@ describe("<Event /> component", () => {
 	});
 
 	test('display more details when clicked', () => {
-		EventWrapper.find(Button).at(0).simulate("click");
+		EventWrapper.find(Button).at(0).simulate("focus");
 		expect(EventWrapper.state('details')).toBeTruthy();
 	});
 });
