@@ -5,7 +5,7 @@ class CitySearch extends Component {
     state = {
         query: '',
         suggestions: [],
-        showSuggestions: undefined
+        showSuggestions: ''
 
     }
 
@@ -27,9 +27,9 @@ class CitySearch extends Component {
 
     render() {
         return (
-            <div className="CitySearch">
-                <p className="m-3"><b>Search by City</b></p>
+            <div className="CitySearch m-auto">
             <input
+                placeholder="Search by City"
                 type="text"
                 className="city"
                 value={this.state.query}

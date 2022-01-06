@@ -10,7 +10,9 @@ import NumberOfEvents                  from './NumberOfEvents';
 class App extends Component {
 	state = {
 		events: [],
-		locations: []
+		locations: [],
+		location: 'all',
+		numberOfEvents: 20
 	};
 
 	componentDidMount() {
@@ -28,32 +30,39 @@ class App extends Component {
 		this.mounted = false;
 	}
 
-	updateEvents = (location) => {
+	updateEvents = (location, eventCount) => {
 		getEvents().then((events) => {
-			const locationEvents = (location === 'all') ? events : events.filter((event) => event.location === location);
+			let locationEvents;
+			if (location) {
+				this.setState({
+					location: location
+				});
+				locationEvents = (location === 'all') ? events : events.filter((event) => event.location === location);
+			} else {
+				locationEvents = (this.state.location === 'all') ? events : events.filter((event) => event.location === this.state.location);
+			}
+			if (eventCount) {
+				this.setState({
+					numberOfEvents: eventCount
+				});
+				locationEvents = locationEvents.slice(0, eventCount);
+			} else {
+				locationEvents = locationEvents.slice(0, this.state.numberOfEvents);
+			}
 			this.setState({
 				events: locationEvents
 			});
 		});
 	};
 
-	updateNumberOfEvents = (eventCount) => {
-		const {currentLocation} = this.state;
-		this.setState({
-			numberOfEvents: eventCount
-		});
-		this.updateEvents(currentLocation, eventCount);
-	};
 
 	render() {
 		return (
 			<div className="App">
 
 				<CitySearch locations={this.state.locations} updateEvents={this.updateEvents}/>
-
-
 				<NumberOfEvents numberOfEvents={this.state.numberOfEvents}
-				                updateNumberofEvents={this.updateNumberOfEvents}/>
+				                updateEvents={this.updateEvents}/>
 				<EventList events={this.state.events}/>
 
 			</div>
