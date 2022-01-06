@@ -1,16 +1,18 @@
-FEATURE 1: FILTER EVENT BY CITY
-Scenario 1: User filters events by city
+Feature: Filter events by city
 
-Given a user is on the main page
-When user clicks on “Filter” button and types in city
-Then events will be shown by city entered
-Scenario 2: When hovering over a suggestion user can click to select city
+  Scenario: When user has not searched for a city, show upcoming events from all cities.
+    Given user has not searched for any city
+    When the user opens the app
+    Then the user should see the list of upcoming events.
 
-Given user has started to type nearest city
-When user hovers and click suggestion
-Then suggestion will popuplate search field
-Scenario 3: When user's city is populated field for number of events will appear
+  Scenario: User should see a list of suggestions when they search for a city
+    Given the main page is open
+    When the user starts typing in the city text box
+    Then the user should receive a list of cities (suggestions) that match what they have typed
 
-Given user has entered a city
-When user clicks suggestion
-Then field for entering number of events to be shown will appear
+  Scenario: User can select a city from the suggested list
+    Given user was typing “Berlin” in the city text box
+    And the list of suggested cities is showing
+    When the user selects a city (e.g., “Berlin, Germany”) from the list
+    Then their city should be changed to that city (i.e., “Berlin, Germany”)
+    And the user should receive a list of upcoming events in that city
