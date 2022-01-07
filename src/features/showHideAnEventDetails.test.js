@@ -30,14 +30,14 @@ defineFeature(feature, test => {
 		let EventWrapper;
 		given('user is viewing the events list', async () => {
 			EventWrapper = shallow(<Event event={mockData[0]}/>);
-			expect(EventWrapper.state('details')).toEqual(true);
+			expect(EventWrapper.state('.hide-details')).toEqual(false);
 		});
 		when('user clicks on the “Show Details” button', () => {
 			const showDetails = EventWrapper.find('.show-details');
 			showDetails.simulate('click');
 		});
 		then('the module will expand to show details for the event', () => {
-			expect(EventWrapper.state('.details')).toEqual(false);
+			expect(EventWrapper.state('.show-details')).toEqual(true);
 		});
 	});
 
@@ -52,7 +52,7 @@ defineFeature(feature, test => {
 			EventWrapper.find('.hide-details').simulate('click');
 		});
 		then('the event module will collapse and hide details', () => {
-			expect(EventWrapper.state('.details')).toEqual(true);
+			expect(EventWrapper.state('.details')).toEqual(false);
 		});
 	});
 
