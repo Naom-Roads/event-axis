@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Button       from 'react-bootstrap/Button';
+import Button               from 'react-bootstrap/Button';
 
 class Event extends Component {
 
@@ -23,12 +23,12 @@ class Event extends Component {
 				<p className="location">{event.summary} | {event.location}</p>
 				<Button variant="outline-info" title="Button that shows and hides details"
 				        className={`${details ? 'show' : 'hide'}-details`} onClick={this.showDetails}>
-					{!details ? "Show Details" : "Hide Details"}
+					{!details ? 'Show Details' : 'Hide Details'}
 				</Button>
 
 				{details &&
 				<div className={`extra-details ${this.state.details
-					? "hide" : "show"}`}>
+					? 'hide' : 'show'}`}>
 					<h3>Event Details:</h3>
 					<a href={event.htmlLink} rel="noreferrer" target="_blank">
 						See Details on Google Calendar
