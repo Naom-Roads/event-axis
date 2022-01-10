@@ -25,9 +25,9 @@ class NumberOfEvents extends Component {
 
 	render() {
 		return (
-			<div className="NumberOfEvents">
+			<div className="numberOfEvents">
 
-				<Dropdown onSelect={this.handleSelect}>
+				<Dropdown onSelect={this.handleSelect} className='dropdown'>
 					<Dropdown.Toggle variant="dark" className="number-of-events mt-3" id="dropdown-basic">
 						Number Of Events
 					</Dropdown.Toggle>

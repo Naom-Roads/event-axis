@@ -1,7 +1,8 @@
 import React                          from 'react';
 import { mount, shallow }             from 'enzyme';
+import { Button }                     from 'react-bootstrap';
 import EventList                      from '../EventList';
-import Event                          from '..//Event';
+import Event                          from '../Event';
 import { getEvents }                  from '../api';
 import App                            from '../App';
 import { mockData }                   from '../mock-data';
@@ -12,32 +13,37 @@ const feature = loadFeature('./src/features/showHideAnEventDetails.feature');
 defineFeature(feature, test => {
 
 	test('An event element is collapsed by default', ({given, when, then}) => {
-		let EventListWrapper;
-		given('user has just opened up the main page', async () => {
-			EventListWrapper = shallow(<EventList events={mockData}/>);
-		});
-		when('user views the events', () => {
-			EventListWrapper = shallow(<EventList events={mockData}/>);
-			expect(EventListWrapper.find('.EventList')).toHaveLength(1);
-		});
+		let AppWrapper;
 		let EventWrapper;
-		then('user will see them all collapsed by default', () => {
+		given('user has just opened up the main page', async () => {
+			AppWrapper = mount(<App />);
 			EventWrapper = shallow(<Event event={mockData[0]}/>);
-			expect(EventWrapper.state('.details')).toEqual(false);
+		});
+		when('user has not clicked on the "Show Details" button', () => {
+			EventWrapper.setState({details: false});
+		});
+		then('user will see them all collapsed by default', () => {
+			expect(EventWrapper.state('details')).toEqual(false);
+
 		});
 	});
+
+
 	test('User can expand an event to see its details', ({given, when, then}) => {
+		let AppWrapper;
 		let EventWrapper;
 		given('user is viewing the events list', async () => {
+			AppWrapper = mount(<App />)
 			EventWrapper = shallow(<Event event={mockData[0]}/>);
-			expect(EventWrapper.state('.hide-details')).toEqual(false);
+			EventWrapper.setState({details: false});
 		});
 		when('user clicks on the “Show Details” button', () => {
-			const showDetails = EventWrapper.find('.show-details');
+			console.log(EventWrapper.find(Button));
+			const showDetails = EventWrapper.find(Button);
 			showDetails.simulate('click');
 		});
 		then('the module will expand to show details for the event', () => {
-			expect(EventWrapper.state('.show-details')).toEqual(true);
+			expect(EventWrapper.state('details')).toEqual(true);
 		});
 	});
 
@@ -48,11 +54,11 @@ defineFeature(feature, test => {
 			EventWrapper.setState({details: true});
 		});
 		when('user click ons the “Hide Details” button', () => {
-			EventWrapper.setState({details: false});
-			EventWrapper.find('.hide-details').simulate('click');
+
+			EventWrapper.find(Button).simulate('click');
 		});
 		then('the event module will collapse and hide details', () => {
-			expect(EventWrapper.state('.details')).toEqual(false);
+			expect(EventWrapper.state('details')).toEqual(false);
 		});
 	});
 

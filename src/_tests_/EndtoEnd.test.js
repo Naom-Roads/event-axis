@@ -1,4 +1,5 @@
 import puppeteer from 'puppeteer';
+import { Button } from 'react-bootstrap';
 
 
 describe('show/hide an event details', () => {
@@ -9,9 +10,9 @@ describe('show/hide an event details', () => {
 		// jest.setTimeout(30000);
 	const browser = await puppeteer.launch({
 		executablePath: "/usr/bin/chromium-browser",
-			// headless: false,
-			// slowMo: 250, // slow down by 250ms
-			// args: ['--disable-extensions'], // ignores default setting that causes timeout errors
+			headless: false,
+			slowMo: 250, // slow down by 250ms
+			args: ['--disable-extensions'], // ignores default setting that causes timeout errors
 		});
 		page = await browser.newPage();
 		await page.goto('http://localhost:3000/');
@@ -23,13 +24,13 @@ describe('show/hide an event details', () => {
 	});
 
 	test('An event element is collapsed by default', async () => {
-		const eventDetails = await page.$('.event .hide-details');
+		const eventDetails = await page.$('details');
 		expect(eventDetails).toBeNull();
 	});
 
 	test('User can expand an event to see its details', async () => {
-		await page.click('.event .hide-details');
-		const eventDetails = await page.$('.event .show-details');
+		await page.click(Button);
+		const eventDetails = await page.$('show-details');
 	expect(eventDetails).toBeDefined();
 	browser.close();
   });
