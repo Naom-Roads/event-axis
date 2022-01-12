@@ -34,8 +34,7 @@
     "build": "BUILD_PATH='./docs' react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d docs"
+    "predeploy": "npm run build"
   },
   "eslintConfig": {
     "extends": [
