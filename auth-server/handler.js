@@ -42,6 +42,7 @@ module.exports.getAuthURL = async () => {
 };
 
 module.exports.getAccessToken = async (event) => {
+    event.pathParameters = undefined;
     const oAuth2Client = new google.auth.OAuth2(
         client_id,
         client_secret,
