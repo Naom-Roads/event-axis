@@ -37,6 +37,17 @@
   margin: auto 0;
 }
 
+.card {
+  border: none !important;
+  border-radius: 10%;
+
+}
+
+.card-body {
+  padding: 30px;
+  border-radius: 10%;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
 
 .App-link {
   color: #61dafb;
