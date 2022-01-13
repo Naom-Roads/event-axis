@@ -30,22 +30,11 @@
 
 }
 
-<<<<<<< HEAD
 .list-group-item {
   background-color: #F7F7F2 !important;
 }
 
 
-
-.card {
-  border: none;
-  padding: 30px;
-  border-radius: 10%;
-  box-shadow: 0 2px 8px 0 rgb(99 99 99 / 20%);
-}
-
-=======
->>>>>>> c2bf704ddd4e479a30a4ff167533625d3d0830a4
 .navbar h1 {
   font-family: 'Pushster', cursive;
   color: #F7F7F2;
