@@ -30,6 +30,11 @@
 
 }
 
+.card {
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
 .navbar h1 {
   font-family: 'Pushster', cursive;
   color: #F7F7F2;
