@@ -65,7 +65,7 @@ class NumberOfEvents extends Component {
 					placeholder="Type in Number of Events"
 					type="text"
 					name="number"
-					className="number"
+					className="number mt-3"
 					value={this.props.numberOfEvents}
 					onChange={(e) => this.handleInput(e)} />
 
