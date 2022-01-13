@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { ListGroup }        from 'react-bootstrap';
 import { InfoAlert }        from './Alert';
 
 
@@ -51,17 +52,17 @@ class CitySearch extends Component {
 						this.setState({showSuggestions: true});
 					}}
 				/>
-				<ul className="suggestions" style={this.state.showSuggestions ? {} : {display: 'none'}}>
+				<ListGroup variant="flush" className="suggestions" style={this.state.showSuggestions ? {} : {display: 'none'}}>
 					{this.state.suggestions.map((suggestion) => (
-						<li
+						<ListGroup.Item
 							key={suggestion}
 							onClick={() => this.handleItemClicked(suggestion)}>
-							{suggestion}</li>
+							{suggestion}</ListGroup.Item>
 					))}
-					<li onClick={() => this.handleItemClicked('all')} key="all">
+					<ListGroup.Item onClick={() => this.handleItemClicked('all')} key="all">
 						<b>See All Cities</b>
-					</li>
-				</ul>
+					</ListGroup.Item>
+				</ListGroup>
 			</div>
 		);
 	}

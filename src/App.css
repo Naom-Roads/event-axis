@@ -26,9 +26,14 @@
   color: #F7F7F2;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  border-bottom: 2px solid #246EB9;
+  border-bottom: 3px solid #246EB9;
 
 }
+
+.list-group-item {
+  background-color: #F7F7F2 !important;
+}
+
 
 .card {
   border: none;
