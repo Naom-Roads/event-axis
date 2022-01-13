@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { ListGroup }        from 'react-bootstrap';
-import { InfoAlert }        from './Alert';
+import { InfoAlert, ErrorAlert }        from './Alert';
 
 
 class CitySearch extends Component {
@@ -8,16 +8,25 @@ class CitySearch extends Component {
 		query: '',
 		suggestions: [],
 		showSuggestions: false,
+		errorMsg: '',
 		infoText: ''
-
 	};
 
 	handleInputChanged = (event) => {
 		const value = event.target.value;
+		const notValid = new RegExp("^/\W/");
 		const suggestions = this.props.locations.filter((location) => {
 			return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
 		});
-		if (suggestions.length === 0) {
+		if (value === notValid) {
+			this.setState({
+				query: value,
+				errorMsg: 'You can only use letters in your search',
+			});
+			console.log(value);
+			console.log(notValid);
+
+		} else if (suggestions.length === 0) {
 			this.setState({
 				query: value,
 				infoText: 'We cannot find the city you are looking for. Please try again or try another city',
@@ -26,7 +35,8 @@ class CitySearch extends Component {
 			return this.setState({
 				query: value,
 				suggestions,
-				infoText: ''
+				infoText: '',
+				errorMsg: ''
 			});
 		}
 	};
@@ -41,6 +51,7 @@ class CitySearch extends Component {
 	render() {
 		return (
 			<div className="CitySearch m-auto">
+				<ErrorAlert text={this.state.errorMsg}/>
 				<InfoAlert text={this.state.infoText}/>
 				<input
 					placeholder="Search by City"

@@ -12,7 +12,7 @@ class App extends Component {
 		events: [],
 		locations: [],
 		location: 'all',
-		numberOfEvents: 20
+		numberOfEvents: ''
 	};
 
 	componentDidMount() {
@@ -29,6 +29,8 @@ class App extends Component {
 	componentWillUnmount() {
 		this.mounted = false;
 	}
+
+
 
 	updateEvents = (location, eventCount) => {
 		getEvents().then((events) => {
@@ -53,6 +55,14 @@ class App extends Component {
 				events: locationEvents
 			});
 		});
+	}
+
+	updateNumberOfEvents = ( userInput ) => {
+		const { currentLocation } = this.state;
+		this.setState({
+			numberOfEvents: userInput
+		});
+		this.updateEvents(currentLocation, userInput);
 	};
 
 
@@ -62,6 +72,7 @@ class App extends Component {
 
 				<CitySearch locations={this.state.locations} updateEvents={this.updateEvents}/>
 				<NumberOfEvents numberOfEvents={this.state.numberOfEvents}
+				                updateNumberOfEvents={this.updateNumberOfEvents}
 				                updateEvents={this.updateEvents}/>
 				<EventList events={this.state.events}/>
 
