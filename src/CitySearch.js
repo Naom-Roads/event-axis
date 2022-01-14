@@ -7,7 +7,6 @@ class CitySearch extends Component {
 	state = {
 		query: '',
 		suggestions: [],
-		location: '',
 		showSuggestions: false,
 		errorMsg: '',
 		infoText: ''
