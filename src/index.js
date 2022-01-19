@@ -5,7 +5,8 @@ import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import * as atatus from 'atatus-spa';
-
+import './App.css';
+import './nprogress.css';
 atatus.config('b2c0e664e77a457d99313b46b90c44de').install();
 
 ReactDOM.render(
