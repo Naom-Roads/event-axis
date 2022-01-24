@@ -30,7 +30,7 @@ class Event extends Component {
 				<div className={`extra-details ${this.state.details
 					? 'hide' : 'show'}`}>
 					<h3>Event Details:</h3>
-					<a href={event.htmlLink} rel="noreferrer" target="_blank">
+					<a href={event.htmlLink} rel="noopener noreferrer" target="_blank">
 						See Details on Google Calendar
 					</a>
 					<p className="event-description">{event.description}</p>
