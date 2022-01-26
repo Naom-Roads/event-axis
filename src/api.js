@@ -21,7 +21,7 @@ export const getAccessToken = async () => {
     if (!accessToken || tokenCheck.error) {
         await localStorage.removeItem("access_token");
         const searchParams = new URLSearchParams(window.location.search);
-        const code = await searchParams.get("code");
+        const code = searchParams.get("code");
         if (!code) {
             const results = await axios.get('https://4wd20fx2h9.execute-api.us-east-2.amazonaws.com/dev/api/get-auth-url');
             const {authUrl} = results.data;
