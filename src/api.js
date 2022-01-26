@@ -25,7 +25,7 @@ export const getAccessToken = async () => {
         if (!code) {
             const results = await axios.get('https://4wd20fx2h9.execute-api.us-east-2.amazonaws.com/dev/api/get-auth-url');
             const {authUrl} = results.data;
-            return (window.location.href = authUrl);
+            return (window.location.href = 'http://localhost:3000');
         }
         return code && getToken(code);
     }
