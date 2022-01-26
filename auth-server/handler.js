@@ -1,5 +1,4 @@
 const { google } = require("googleapis");
-const OAuth2 = google.auth.OAuth2;
 const calendar = google.calendar("v3");
 
 
@@ -18,7 +17,7 @@ const credentials = {
 };
 
 const { client_secret, client_id, redirect_uris, calendar_id } = credentials;
-const oAuth2Client = new OAuth2(
+const oAuth2Client = new google.auth.OAuth2(
     client_id,
     client_secret,
     redirect_uris[0]
@@ -43,7 +42,7 @@ module.exports.getAuthURL = async () => {
 
 module.exports.getAccessToken = async (event) => {
     event.pathParameters = undefined;
-    const oAuth2Client = new OAuth2(
+    const oAuth2Client = new google.auth.OAuth2(
         client_id,
         client_secret,
         redirect_uris[0]
@@ -77,7 +76,7 @@ module.exports.getAccessToken = async (event) => {
 };
 
 module.exports.getCalendarEvents = async (event) => {
-    const oAuth2Client = new OAuth2(
+    const oAuth2Client = new google.auth.OAuth2(
         client_id,
         client_secret,
         redirect_uris[0]
