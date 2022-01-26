@@ -12,13 +12,13 @@ const credentials = {
     auth_uri: "https://accounts.google.com/o/oauth2/auth",
     token_uri: "https://oauth2.googleapis.com/token",
     auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs",
-    redirect_uris: ["https://naom-roads.github.io/event-axis", "http://localhost:3000"],
+    redirect_uris: ["https://naom-roads.github.io/event-axis"],
     javascript_origins: ["https://naom-roads.github.io", "http://localhost:8080"],
 
 };
 
 const { client_secret, client_id, redirect_uris, calendar_id } = credentials;
-const oAuth2Client = new google.auth.OAuth2(
+const oAuth2Client = new OAuth2(
     client_id,
     client_secret,
     redirect_uris[0]
@@ -43,7 +43,7 @@ module.exports.getAuthURL = async () => {
 
 module.exports.getAccessToken = async (event) => {
     event.pathParameters = undefined;
-    const oAuth2Client = new google.auth.OAuth2(
+    const oAuth2Client = new OAuth2(
         client_id,
         client_secret,
         redirect_uris[0]
@@ -77,7 +77,7 @@ module.exports.getAccessToken = async (event) => {
 };
 
 module.exports.getCalendarEvents = async (event) => {
-    const oAuth2Client = new google.auth.OAuth2(
+    const oAuth2Client = new OAuth2(
         client_id,
         client_secret,
         redirect_uris[0]

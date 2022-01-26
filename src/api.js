@@ -25,7 +25,7 @@ export const getAccessToken = async () => {
         if (!code) {
             const results = await axios.get('https://4wd20fx2h9.execute-api.us-east-2.amazonaws.com/dev/api/get-auth-url');
             const {authUrl} = results.data;
-            return (window.location.href = 'http://localhost:3000');
+            return (window.location.href = authUrl);
         }
         return code && getToken(code);
     }
@@ -48,10 +48,8 @@ export const getEvents = async () => {
 
     if (!navigator.onLine) {
         const data = localStorage.getItem("lastEvents");
-        console.log(data);
-        console.log(typeof data);
         NProgress.done();
-        return data ? JSON.parse(data).events : [];
+        return data?JSON.parse(data).events:[];
     }
 
     const token = await getAccessToken();
