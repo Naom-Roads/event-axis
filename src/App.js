@@ -37,7 +37,7 @@ class App extends Component {
 		}
 	}
 
-	componentWillUnmount(){
+	componentWillUnmount = () => {
 		this.mounted = false;
 	}
 
@@ -47,11 +47,10 @@ class App extends Component {
 			let locationEvents;
 			if (location) {
 				this.setState({
-					location: location
+					location: location,
 				});
 
-				locationEvents = (location === 'all') ?
-					events : events.filter((event) => event.location === location);
+				locationEvents = (location === 'all') ? events : events.filter((event) => event.location === location);
 				console.log(locationEvents);
 			} else {
 				locationEvents = (this.state.location === 'all') ?
