@@ -9,29 +9,10 @@ import NProgress from 'nprogress';
 
 
 export const extractLocations = (events) => {
-    const extractLocations = events.map((event) => event.location);
-    console.log(extractLocations);
-    const locations = [...new Set(extractLocations)];
+    var extractLocations = events.map((event) => event.location);
+    var locations = [...new Set(extractLocations)];
     return locations;
 };
-
-export const getAccessToken = async () => {
-    const accessToken = localStorage.getItem('access_token');
-    const tokenCheck = accessToken && (await checkToken(accessToken));
-
-    if (!accessToken || tokenCheck.error) {
-        await localStorage.removeItem("access_token");
-        const searchParams = new URLSearchParams(window.location.search);
-        const code = searchParams.get("code");
-        if (!code) {
-            const results = await axios.get('https://4wd20fx2h9.execute-api.us-east-2.amazonaws.com/dev/api/get-auth-url');
-            const {authUrl} = results.data;
-            return (window.location.href = authUrl);
-        }
-        return code && getToken(code);
-    }
-    return accessToken;
-}
 
 export const checkToken = async (accessToken) => {
     var result = await fetch(`https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`)
@@ -68,6 +49,24 @@ export const getEvents = async () => {
         NProgress.done();
         return result.data.events;
     }
+};
+
+export const getAccessToken = async () => {
+    const accessToken = localStorage.getItem('access_token');
+    const tokenCheck = accessToken && (await checkToken(accessToken));
+
+    if (!accessToken || tokenCheck.error) {
+        await localStorage.removeItem("access_token");
+        const searchParams = new URLSearchParams(window.location.search);
+        const code = searchParams.get("code");
+        if (!code) {
+            const results = await axios.get('https://4wd20fx2h9.execute-api.us-east-2.amazonaws.com/dev/api/get-auth-url');
+            const {authUrl} = results.data;
+            return (window.location.href = authUrl);
+        }
+        return code && getToken(code);
+    }
+    return accessToken;
 };
 
     const removeQuery = () => {
