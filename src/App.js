@@ -12,8 +12,9 @@ class App extends Component {
 		locations: [],
 		location: 'all',
 		numberOfEvents: '',
+		infoText: '',
 		showWelcomeScreen: undefined,
-	    infoText: '',
+
 
 	};
 
@@ -93,12 +94,11 @@ class App extends Component {
 				<NumberOfEvents numberOfEvents={this.state.numberOfEvents}
 				                updateNumberOfEvents={this.updateNumberOfEvents}
 				                updateEvents={this.updateEvents}/>
+
 				<EventList events={this.state.events}/>
 
 				<WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
-				               getAccessToken={() => {
-					               getAccessToken()
-				               }}/>
+				               getAccessToken={() => {getAccessToken() }} />
 
 			</div>
 		);

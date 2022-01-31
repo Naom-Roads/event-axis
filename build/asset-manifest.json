@@ -1,7 +1,7 @@
 {
   "main.css": "/event-axis/static/css/main.b1ffc910.chunk.css",
-  "main.js": "/event-axis/static/js/main.f65eef34.chunk.js",
-  "main.js.map": "/event-axis/static/js/main.f65eef34.chunk.js.map",
+  "main.js": "/event-axis/static/js/main.a5b2cd95.chunk.js",
+  "main.js.map": "/event-axis/static/js/main.a5b2cd95.chunk.js.map",
   "runtime~main.js": "/event-axis/static/js/runtime~main.17ec6973.js",
   "runtime~main.js.map": "/event-axis/static/js/runtime~main.17ec6973.js.map",
   "static/js/2.956fa486.chunk.js": "/event-axis/static/js/2.956fa486.chunk.js",
@@ -9,7 +9,7 @@
   "static/js/3.ce65eebf.chunk.js": "/event-axis/static/js/3.ce65eebf.chunk.js",
   "static/js/3.ce65eebf.chunk.js.map": "/event-axis/static/js/3.ce65eebf.chunk.js.map",
   "index.html": "/event-axis/index.html",
-  "precache-manifest.154d82a851b133c337b2376cd52bb9b7.js": "/event-axis/precache-manifest.154d82a851b133c337b2376cd52bb9b7.js",
+  "precache-manifest.8e68b0dbbe8d32fad5faa5f0bd1be6d9.js": "/event-axis/precache-manifest.8e68b0dbbe8d32fad5faa5f0bd1be6d9.js",
   "service-worker.js": "/event-axis/service-worker.js",
   "static/css/main.b1ffc910.chunk.css.map": "/event-axis/static/css/main.b1ffc910.chunk.css.map"
 }

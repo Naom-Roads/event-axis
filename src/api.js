@@ -15,7 +15,7 @@ export const extractLocations = (events) => {
 };
 
 export const checkToken = async (accessToken) => {
-    var result = await fetch(`https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`)
+    const result = await fetch(`https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`)
         .then((res) => res.json())
         .catch((error) => error.json());
     return result;
@@ -23,9 +23,10 @@ export const checkToken = async (accessToken) => {
 
 export const getEvents = async () => {
     NProgress.start();
+
     if (window.location.href.startsWith("http://localhost")) {
         NProgress.done();
-        return mockData;
+        return {mockData};
     }
 
     if (!navigator.onLine) {
@@ -42,7 +43,7 @@ export const getEvents = async () => {
         const result = await axios.get(url);
 
         if (result.data) {
-            const locations = extractLocations(result.data.events);
+            var locations = extractLocations(result.data.events);
             localStorage.setItem("lastEvents", JSON.stringify(result.data));
             localStorage.setItem("locations", JSON.stringify(locations));
         }
@@ -52,7 +53,9 @@ export const getEvents = async () => {
 };
 
 export const getAccessToken = async () => {
+
     const accessToken = localStorage.getItem('access_token');
+
     const tokenCheck = accessToken && (await checkToken(accessToken));
 
     if (!accessToken || tokenCheck.error) {
@@ -61,7 +64,7 @@ export const getAccessToken = async () => {
         const code = searchParams.get("code");
         if (!code) {
             const results = await axios.get('https://4wd20fx2h9.execute-api.us-east-2.amazonaws.com/dev/api/get-auth-url');
-            const {authUrl} = results.data;
+            const { authUrl } = results.data;
             return (window.location.href = authUrl);
         }
         return code && getToken(code);
