@@ -14,15 +14,18 @@ class App extends Component {
 		numberOfEvents: '',
 		showWelcomeScreen: undefined,
 	    infoText: '',
+
 	};
 
 	async componentDidMount() {
 		this.mounted = true;
+
 		const accessToken = localStorage.getItem('access_token');
-		const isTokenValid = !(await checkToken(accessToken)).error;
+		const isTokenValid = !(await checkToken(accessToken)).error ;
 		const searchParams = new URLSearchParams(window.location.search);
-		const code = searchParams.get("code");
-		this.setState({showWelcomeScreen: !(code || isTokenValid)});
+		const code = searchParams.get('code');
+
+		this.setState({showWelcomeScreen: !(code || isTokenValid) });
 		if ((code || isTokenValid) && this.mounted) {
 			getEvents().then((events) => {
 				if (!navigator.onLine) {
@@ -42,7 +45,7 @@ class App extends Component {
 	}
 
 
-	updateEvents = (location, eventCount) => {
+	updateEvents = async (location, eventCount) => {
 		getEvents().then((events) => {
 			let locationEvents;
 			if (location) {
@@ -70,12 +73,12 @@ class App extends Component {
 		});
 	};
 
-	updateNumberOfEvents = (userInput) => {
+	updateNumberOfEvents = async (userInput) => {
 		const {currentLocation} = this.state;
 		this.setState({
 			numberOfEvents: userInput
 		});
-		this.updateEvents(currentLocation, userInput);
+		await this.updateEvents(currentLocation, userInput);
 	};
 
 
