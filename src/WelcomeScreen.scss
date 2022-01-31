@@ -8,6 +8,14 @@
 
 }
 
+a {
+    color: white;
+}
+
+a:hover {
+    color: #4285f4;
+}
+
 .card-body {
     box-shadow: none;
     display: flex;
