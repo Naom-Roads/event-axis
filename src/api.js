@@ -10,6 +10,7 @@ import NProgress from 'nprogress';
 
 export const extractLocations = (events) => {
     const extractLocations = events.map((event) => event.location);
+    console.log(extractLocations);
     const locations = [...new Set(extractLocations)];
     return locations;
 };

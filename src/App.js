@@ -37,7 +37,7 @@ class App extends Component {
 		}
 	}
 
-	componentWillUnmount = () => {
+	componentWillUnmount(){
 		this.mounted = false;
 	}
 
