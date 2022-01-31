@@ -34,7 +34,8 @@ code {
 }
 
 .App-header {
-  background-color: #092327;
+  background: rgb(2,0,36);
+  background: linear-gradient(253deg, rgba(2,0,36,1) 0%, rgba(9,121,75,1) 58%, rgba(0,212,255,1) 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,6 +45,7 @@ code {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   border-bottom: 3px solid #246EB9;
+  text-shadow: 2px 2px #064139;
 
 }
 
