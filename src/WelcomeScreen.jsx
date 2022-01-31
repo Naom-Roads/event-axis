@@ -8,7 +8,6 @@ function WelcomeScreen(props) {
 			<div className="WelcomeScreen">
 
 				<div className="brand card-body">
-
 				<h1 className="shadows">
 					<span>e</span>
 					<span>v</span>

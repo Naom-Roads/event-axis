@@ -9,7 +9,6 @@ class EventList extends Component {
         const {events} = this.props;
         return (
             <Row className="d-flex justify-content-center event-list-wrapper m-3">
-
                 {events.map(event =>
                 <Col className="p-2 mb-5" sm={12} md={6} lg={4} key={event.id}>
                     <Card border="dark">
