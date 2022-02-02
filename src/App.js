@@ -17,19 +17,6 @@ class App extends Component {
 		showWelcomeScreen: undefined,
 	}
 
-	getData = () => {
-		const {locations, events} = this.state;
-		console.log(locations);
-		const data = locations.map((location) => {
-			console.log(data);
-			const number = events.filter((event) => event.location === location).length;
-			const city = location.split(', ').shift();
-			console.log(city);
-			console.log(location);
-			return {city, number};
-		})
-		return data;
-	};
 
 
 	async componentDidMount() {
@@ -54,6 +41,21 @@ class App extends Component {
 			});
 		}
 	}
+
+	getData = () => {
+		const {locations, events} = this.state;
+		console.log(locations);
+		const data = locations.map((location) => {
+			console.log(data);
+			const number = events.filter((event) => event.location === 'all').length;
+			const city = location.split(', ').shift();
+			console.log(city);
+			console.log(location);
+			return {city, number};
+		})
+		return data;
+	};
+
 
 	componentWillUnmount = () => {
 		this.mounted = false;
