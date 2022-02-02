@@ -1,10 +1,12 @@
-import React, { Component }                                            from 'react';
-import EventList                                                       from './EventList';
-import CitySearch                                                      from './CitySearch';
-import { extractLocations, getEvents, checkToken, getAccessToken }     from './api';
-import NumberOfEvents                                                  from './NumberOfEvents';
-import WelcomeScreen                                                   from './WelcomeScreen';
-import { InfoAlert }                                                   from './Alert';
+import React, { Component }                                                                                              from 'react';
+import EventGenre
+                                                                                                                         from './EventGenre';
+import EventList                                                                                                         from './EventList';
+import CitySearch                                                                                                        from './CitySearch';
+import { extractLocations, getEvents, checkToken, getAccessToken }                                                       from './api';
+import NumberOfEvents                                                                                                    from './NumberOfEvents';
+import WelcomeScreen                                                                                                     from './WelcomeScreen';
+import { InfoAlert }                                                                                                     from './Alert';
 import { ScatterChart, Scatter, Pie, PieChart, Sector, Cell, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 
@@ -111,6 +113,8 @@ class App extends Component {
 				                updateEvents={this.updateEvents}/>
 
 				<h4>Events in each city</h4>
+				<EventGenre events={events} />
+				<div className="data-vis-wrapper">
 				<ResponsiveContainer height={400}>
 				<ScatterChart
 					width={400}
@@ -126,7 +130,7 @@ class App extends Component {
 					<Scatter data={this.getData()} fill="#8884d8"/>
 				</ScatterChart>
  </ResponsiveContainer>
-
+				</div>
 				<EventList events={events}/>
 
 				<WelcomeScreen showWelcomeScreen={showWelcomeScreen}
