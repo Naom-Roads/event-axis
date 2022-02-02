@@ -5,7 +5,8 @@ import { extractLocations, getEvents, checkToken, getAccessToken }     from './a
 import NumberOfEvents                                                  from './NumberOfEvents';
 import WelcomeScreen                                                   from './WelcomeScreen';
 import { InfoAlert }                                                   from './Alert';
-import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { ScatterChart, Scatter, Pie, PieChart, Sector, Cell, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+
 
 class App extends Component {
 	state = {
@@ -110,7 +111,7 @@ class App extends Component {
 				                updateEvents={this.updateEvents}/>
 
 				<h4>Events in each city</h4>
- <ResponsiveContainer height={400} >
+				<ResponsiveContainer height={400}>
 				<ScatterChart
 					width={400}
 					height={400}
