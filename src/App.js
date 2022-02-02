@@ -17,6 +17,19 @@ class App extends Component {
 		showWelcomeScreen: undefined,
 	};
 
+	getData = () => {
+		const {locations, events} = this.state;
+		console.log(locations);
+		const data = locations.map(location => {
+			const number = events.filter(event => event.location === location).length;
+			const city = location.split(', ').shift();
+			console.log(data);
+			return {city, number};
+		})
+		return data;
+	};
+
+
 	async componentDidMount() {
 		this.mounted = true;
 
@@ -79,18 +92,6 @@ class App extends Component {
 		await this.updateEvents(currentLocation, userInput);
 	}
 
-	getData = () => {
-		const {locations, events} = this.state;
-		console.log(locations);
-		const data = locations.map(location => {
-			const number = events.filter(event => event.location === location).length;
-			const city = location.split(', ').shift();
-			console.log(data);
-			return {city, number};
-		})
-		return data;
-	};
-
 
 
 	render() {
@@ -122,10 +123,11 @@ class App extends Component {
 					<Scatter data={this.getData()} fill="#8884d8"/>
 				</ScatterChart>
  </ResponsiveContainer>
+
 				<EventList events={this.state.events}/>
 
 				<WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
-				               getAccessToken={() => {getAccessToken() }} />
+				               getAccessToken={() => { getAccessToken() }} />
 
 			</div>
 		);
