@@ -15,13 +15,13 @@ class App extends Component {
 		numberOfEvents: '',
 		infoText: '',
 		showWelcomeScreen: undefined,
-	};
+	}
 
 	getData = () => {
 		const {locations, events} = this.state;
 		console.log(locations);
-		const data = locations.map(location => {
-			const number = events.filter(event => event.location === location).length;
+		const data = locations.map((location) => {
+			const number = events.filter((event) => event.location === location).length;
 			const city = location.split(', ').shift();
 			console.log(data);
 			return {city, number};
@@ -97,14 +97,17 @@ class App extends Component {
 
 
 	render() {
-		if (this.state.showWelcomeScreen === undefined) {
-			return <div className="App"/>;
-		}
+		if (this.state.showWelcomeScreen === undefined)
+			return <div className="App"/>
+
+		const { numberOfEvents, locations, events} = this.state;
+
 		return (
+
 			<div className="App">
 				<InfoAlert text={this.state.infoText}/>
-				<CitySearch locations={this.state.locations} updateEvents={this.updateEvents}/>
-				<NumberOfEvents numberOfEvents={this.state.numberOfEvents}
+				<CitySearch locations={locations} updateEvents={this.updateEvents}/>
+				<NumberOfEvents numberOfEvents={numberOfEvents}
 				                updateNumberOfEvents={this.updateNumberOfEvents}
 				                updateEvents={this.updateEvents}/>
 
@@ -125,7 +128,7 @@ class App extends Component {
 				</ScatterChart>
  </ResponsiveContainer>
 
-				<EventList events={this.state.events}/>
+				<EventList events={events}/>
 
 				<WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
 				               getAccessToken={() => { getAccessToken() }} />
