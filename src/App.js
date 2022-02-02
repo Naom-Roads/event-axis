@@ -7,6 +7,10 @@ import WelcomeScreen                                                   from './W
 import { InfoAlert }                                                   from './Alert';
 import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 
+const data = [
+
+]
+
 class App extends Component {
 	state = {
 		events: [],
