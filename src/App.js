@@ -53,7 +53,9 @@ class App extends Component {
 		}
 	}
 
-	componentWillUnmount = () => { this.mounted = false; }
+	componentWillUnmount = () => {
+		this.mounted = false;
+	}
 
 
 	updateEvents = async (location, eventCount) => {
@@ -95,7 +97,6 @@ class App extends Component {
 
 
 	render() {
-		const { locations, numberOfEvents, events } = this.state;
 		if (this.state.showWelcomeScreen === undefined) {
 			return <div className="App"/>;
 		}
