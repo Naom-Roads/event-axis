@@ -11,10 +11,11 @@ class App extends Component {
 	state = {
 		events: [],
 		locations: [],
-		location: 'all',
+		currentLocation: 'all',
 		numberOfEvents: '',
 		infoText: '',
 		showWelcomeScreen: undefined,
+
 	}
 
 
@@ -42,24 +43,7 @@ class App extends Component {
 		}
 	}
 
-	getData = () => {
-		const {locations, events} = this.state;
-		console.log(locations);
-		const data = locations.map((location) => {
-			console.log(data);
-			const number = events.filter((event) => event.location === 'all').length;
-			const city = location.split(', ').shift();
-			console.log(city);
-			console.log(location);
-			return {city, number};
-		})
-		return data;
-	};
-
-
-	componentWillUnmount = () => {
-		this.mounted = false;
-	}
+	componentWillUnmount = () => (this.mounted = false);
 
 
 	updateEvents = async (location, eventCount) => {
@@ -98,13 +82,27 @@ class App extends Component {
 		await this.updateEvents(currentLocation, userInput);
 	}
 
+	getData = () => {
+		const {locations, events} = this.state;
+		console.log(locations);
+		const data = locations.map((location) => {
+			console.log(data);
+			const number = events.filter((event) => event.location === location).length;
+			const city = location.split(', ').shift();
+			console.log(city);
+			console.log(location);
+			return {city, number};
+		})
+		return data;
+	};
+
 
 
 	render() {
 		if (this.state.showWelcomeScreen === undefined)
 			return <div className="App"/>
 
-		const { numberOfEvents, locations, events} = this.state;
+		const {locations, numberOfEvents, events, showWelcomeScreen} = this.state;
 
 		return (
 
@@ -126,7 +124,7 @@ class App extends Component {
 				>
 					<CartesianGrid />
 					<XAxis type="category" dataKey="city" name="city"  />
-					<YAxis type="number" dataKey="number" name="number of events"  />
+					<YAxis allowDecimals={false} type="number" dataKey="number" name="number of events"  />
 					<Tooltip cursor={{ strokeDasharray: '3 3' }} />
 					<Scatter data={this.getData()} fill="#8884d8"/>
 				</ScatterChart>
@@ -134,7 +132,7 @@ class App extends Component {
 
 				<EventList events={events}/>
 
-				<WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
+				<WelcomeScreen showWelcomeScreen={showWelcomeScreen}
 				               getAccessToken={() => { getAccessToken() }} />
 
 			</div>
