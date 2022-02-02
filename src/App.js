@@ -5,7 +5,7 @@ import { extractLocations, getEvents, checkToken, getAccessToken }     from './a
 import NumberOfEvents                                                  from './NumberOfEvents';
 import WelcomeScreen                                                   from './WelcomeScreen';
 import { InfoAlert }                                                   from './Alert';
-import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
+import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 class App extends Component {
 	state = {
@@ -92,7 +92,7 @@ class App extends Component {
 
 
 	render() {
-		const { locations, numberOfEvents } = this.state;
+		const { locations, numberOfEvents, events } = this.state;
 		if (this.state.showWelcomeScreen === undefined) {
 			return <div className="App"/>;
 		}
@@ -105,7 +105,7 @@ class App extends Component {
 				                updateEvents={this.updateEvents}/>
 
 				<h4>Events in each city</h4>
-
+ <ResponsiveContainer height={400} >
 				<ScatterChart
 					width={400}
 					height={400}
@@ -119,7 +119,7 @@ class App extends Component {
 					<Tooltip cursor={{ strokeDasharray: '3 3' }} />
 					<Scatter data={this.getData()} fill="#8884d8"/>
 				</ScatterChart>
-
+ </ResponsiveContainer>
 				<EventList events={this.state.events}/>
 
 				<WelcomeScreen showWelcomeScreen={this.state.showWelcomeScreen}
