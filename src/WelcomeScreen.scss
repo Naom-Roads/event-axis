@@ -3,8 +3,11 @@
     width: 100%;
     height: 100%;
     top: 0;
-    background: rgb(2,0,36);
-    background: linear-gradient(184deg, rgba(2,0,36,1) 0%, rgba(9,121,75,1) 35%, rgba(0,212,255,1) 100%);
+    background: rgba(8, 4, 89, 0);
+    background-image: linear-gradient(184deg, rgb(26, 7, 86) 0%, rgb(227, 107, 10) 50%, rgba(243, 202, 99, 0) 100%), url("pexels-josh-sorenson-976866.png");
+    background-size: cover;
+    background-repeat:no-repeat;
+
 
 }
 
@@ -27,7 +30,7 @@ a:hover {
 h1 {
     font-family: 'Anton',
     Arial, sans-serif;
-    color: #075b41;
+    color: white;
     font-weight: bold;
 }
 
@@ -42,25 +45,24 @@ h4 {
 
     align-items: center;
     justify-content: center;
-    color: #075b41;
+    color: #857e9b;
 }
 .shadows {
     position: relative;
-    text-shadow: -15px 5px 20px #064139;
+    text-shadow: -15px 5px 20px rgba(14, 5, 1, 0.60);
     text-transform: uppercase;
-    color: #088059;
-    letter-spacing: 0.05em;
-    font-family: 'Anton',
-    Arial, sans-serif;
+    color: #e1deea;
+    letter-spacing: 0.1em;
+    font-family: 'Libre Barcode 128 Text', cursive, Arial, sans-serif;
     user-select: none;
-    font-size: 150px;
+    font-size: 200px;
     transition: all 0.25s
     ease-out;
 
 }
 
 .shadows:hover {
-    text-shadow: -16px 6px 15px #064139;
+    text-shadow: -16px 6px 15px #0f0825;
 }
 
 .login-button {
@@ -81,7 +83,7 @@ h4 {
     margin: 1rem;
     background-color: #4285f4;
     border-radius: 3px;
-    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 3px 4px 0 rgb(9, 2, 30);
 }
 .google-btn:hover {
     box-shadow: 0 0 6px #4285f4;

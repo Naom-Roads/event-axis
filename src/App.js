@@ -106,6 +106,7 @@ class App extends Component {
 		return (
 
 			<div className="App">
+
 				<InfoAlert text={this.state.infoText}/>
 				<CitySearch locations={locations} updateEvents={this.updateEvents}/>
 				<NumberOfEvents numberOfEvents={numberOfEvents}
@@ -134,8 +135,8 @@ class App extends Component {
 				<EventList events={events}/>
 
 				<WelcomeScreen showWelcomeScreen={showWelcomeScreen}
-				               getAccessToken={() => { getAccessToken() }} />
-
+				               getAccessToken={() => { getAccessToken() }}
+				/>
 			</div>
 		);
 	}
