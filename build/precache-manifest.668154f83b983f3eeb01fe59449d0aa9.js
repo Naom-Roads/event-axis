@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "4299c02a48f003751f2f",
-    "url": "/event-axis/static/css/main.dfd7667d.chunk.css"
+    "revision": "17b1ab0f2cb3e2fb7ac3",
+    "url": "/event-axis/static/css/main.d9e67abb.chunk.css"
   },
   {
-    "revision": "4299c02a48f003751f2f",
-    "url": "/event-axis/static/js/main.fc82d3f4.chunk.js"
+    "revision": "17b1ab0f2cb3e2fb7ac3",
+    "url": "/event-axis/static/js/main.6a5b7c08.chunk.js"
   },
   {
     "revision": "a3dcf2ea3907cc03b779",
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/event-axis/static/media/pexels-josh-sorenson-976866.6240291f.png"
   },
   {
-    "revision": "ed6fc60e18685a74a3faeba60d00464d",
+    "revision": "b0b0f97e2e970b46b1cbe1bee17862b1",
     "url": "/event-axis/index.html"
   }
 ];
