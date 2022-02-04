@@ -1,5 +1,5 @@
 {
-  "main.css": "/event-axis/static/css/main.d9e67abb.chunk.css",
+  "main.css": "/event-axis/static/css/main.085dff0e.chunk.css",
   "main.js": "/event-axis/static/js/main.6a5b7c08.chunk.js",
   "main.js.map": "/event-axis/static/js/main.6a5b7c08.chunk.js.map",
   "runtime~main.js": "/event-axis/static/js/runtime~main.caf726a7.js",
@@ -9,8 +9,8 @@
   "static/js/3.7b088bc2.chunk.js": "/event-axis/static/js/3.7b088bc2.chunk.js",
   "static/js/3.7b088bc2.chunk.js.map": "/event-axis/static/js/3.7b088bc2.chunk.js.map",
   "index.html": "/event-axis/index.html",
-  "precache-manifest.668154f83b983f3eeb01fe59449d0aa9.js": "/event-axis/precache-manifest.668154f83b983f3eeb01fe59449d0aa9.js",
+  "precache-manifest.170003a0282eef9ac7b0a63ca3fcdd99.js": "/event-axis/precache-manifest.170003a0282eef9ac7b0a63ca3fcdd99.js",
   "service-worker.js": "/event-axis/service-worker.js",
-  "static/css/main.d9e67abb.chunk.css.map": "/event-axis/static/css/main.d9e67abb.chunk.css.map",
+  "static/css/main.085dff0e.chunk.css.map": "/event-axis/static/css/main.085dff0e.chunk.css.map",
   "static/media/WelcomeScreen.scss": "/event-axis/static/media/pexels-josh-sorenson-976866.6240291f.png"
 }
