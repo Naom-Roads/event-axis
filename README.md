@@ -17,7 +17,38 @@ EventAxis is a progressive web application that will give users the ability to v
 ## Key Features
 
 
-### Scenarios and Users Stories 
+* User can connect Google Calendar
+* User view their events online or offline
+* User can filter events by city
+* User can display a particular number of events on page
+
+
+<hr>
+
+### User Stories:
+
+● As a user, I would like to be able to filter events by city so that I can see the list of events that
+take place in that city.
+
+● As a user, I would like to be able to show/hide event details so that I can see more/less
+information about an event.
+
+● As a user, I would like to be able to specify the number of events I want to view in the app so
+that I can see more or fewer events in the events list at once.
+
+● As a user, I would like to be able to use the app when offline so that I can see the events I
+viewed the last time I was online.
+
+● As a user, I would like to be able to add the app shortcut to my home screen so that I can
+open the app faster.
+
+● As a user, I would like to be able to see a chart showing the upcoming events in each city so
+that I know what events are organized in which city.
+
+
+<hr>
+
+### Test Scenarios 
 
 FEATURE 1: FILTER EVENT BY CITY
 
@@ -63,6 +94,7 @@ Scenario 3: User can collapse an event to hide its details
 * When user click ons the “HIde Details” button
 * Then the event module will collapse and hide details
 
+<hr>
 
 FEATURE 3: SPECIFY NUMBER OF EVENTS
 
@@ -78,6 +110,7 @@ Scenario 2: User can change the number of events they want to see
 * When a user clicks on the drop-down menu and selects a number of events to view
 * Then a the page will show the number of events specified by the user
 
+<hr>
 
 Feature 4: ADD AN APP SHORTCUT TO THE HOMESCREEN
 
@@ -86,6 +119,8 @@ Scenario 1: User click's app shortcut
 * Given a user has an app shortcut on their device
 * When user clicks on shortcut icon
 * Then app will open  
+
+<hr>
 
 FEATURE 5: USE THE APP WHEN OFFLINE
 
@@ -101,6 +136,7 @@ Scenario 2: Show error when user changes the settings (city, time range)
 * When user changes the city, time range
 * Then show an error that indicates the user cannot make changes while offline.
 
+<hr>
 
 FEATURE 6: DATA VISUALIZATION
 
@@ -111,23 +147,4 @@ Scenario 1: Show a chart with the number of upcoming events in each city
 * Then they can view a chat showing the number of events in each city. 
 
 
-### User Stories:
-
-● As a user, I would like to be able to filter events by city so that I can see the list of events that
-take place in that city.
-
-● As a user, I would like to be able to show/hide event details so that I can see more/less
-information about an event.
-
-● As a user, I would like to be able to specify the number of events I want to view in the app so
-that I can see more or fewer events in the events list at once.
-
-● As a user, I would like to be able to use the app when offline so that I can see the events I
-viewed the last time I was online.
-
-● As a user, I would like to be able to add the app shortcut to my home screen so that I can
-open the app faster.
-
-● As a user, I would like to be able to see a chart showing the upcoming events in each city so
-that I know what events are organized in which city.
 
