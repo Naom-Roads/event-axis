@@ -21,6 +21,7 @@ EventAxis is a progressive web application that will give users the ability to v
 * User view their events online or offline
 * User can filter events by city
 * User can display a particular number of events on page
+* User can view data regarding events on a visual chart
 
 
 <hr>
