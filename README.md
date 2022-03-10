@@ -11,17 +11,17 @@ EventAxis is a progressive web application that will give users the ability to v
 * Oauth Authentication Flow
 * Serverless Functions using AWS
 * Passes LightHouse PWA checklist
-* 
 * Built using TDD technique
 
 
 ## Key Features
 
-### FEATURE 1: FILTER EVENT BY CITY
 
+### Scenarios and Users Stories 
+
+FEATURE 1: FILTER EVENT BY CITY
 
 Scenario 1: User filters events by city
-
 
 * Given a user is on the main page
 * When user clicks on “Filter” button and types in city
@@ -40,11 +40,9 @@ Scenario 3: When user's city is populated field for number of events will appear
 * Then field for entering number of events to be shown will appear
 
 
-### FEATURE 2: SHOW/HIDE AN EVENT'S DETAILS
-
+ FEATURE 2: SHOW/HIDE AN EVENT'S DETAILS
 
 Scenario 1: An event element is collapsed by default
-
 
 * Given user has just opened up the main page
 * When user views the events
@@ -53,7 +51,6 @@ Scenario 1: An event element is collapsed by default
 
 Scenario 2: User can expand an event to see its details
 
-
 * Given user is viewing the events list
 * When user clicks on the “Show Details” button
 * Then the module will expand to show details for the event
@@ -61,13 +58,12 @@ Scenario 2: User can expand an event to see its details
 
 Scenario 3: User can collapse an event to hide its details
 
-
 * Given user is viewing uncollapsed module
 * When user click ons the “HIde Details” button
 * Then the event module will collapse and hide details
 
-### FEATURE 3: SPECIFY NUMBER OF EVENTS
 
+FEATURE 3: SPECIFY NUMBER OF EVENTS
 
 Scenario 1: When user hasn’t specified a number, 32 is the default number.
 
@@ -75,17 +71,14 @@ Scenario 1: When user hasn’t specified a number, 32 is the default number.
 * When user has not specified a number
 * Then default number is 32
 
-
 Scenario 2: User can change the number of events they want to see
-
 
 * Given a user is viewing the list of events 
 * When a user clicks on the drop-down menu and selects a number of events to view
 * Then a the page will show the number of events specified by the user
 
 
-
-### Feature 4: ADD AN APP SHORTCUT TO THE HOMESCREEN
+Feature 4: ADD AN APP SHORTCUT TO THE HOMESCREEN
 
 Scenario 1: User click's app shortcut
 
@@ -93,22 +86,20 @@ Scenario 1: User click's app shortcut
 * When user clicks on shortcut icon
 * Then app will open  
 
-
-### FEATURE 5: USE THE APP WHEN OFFLINE
+FEATURE 5: USE THE APP WHEN OFFLINE
 
 Scenario 1: Show cached data when there’s no internet connection
-
 
 * Given the app is offline
 * When a user is on the site
 * Then the app will show cached data
-
 
 Scenario 2: Show error when user changes the settings (city, time range)
 
 * Given application is offline
 * When user changes the city, time range
 * Then show an error that indicates the user cannot make changes while offline.
+
 
 FEATURE 6: DATA VISUALIZATION
 
