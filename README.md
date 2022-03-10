@@ -1,8 +1,18 @@
 
 SUMMARY: 
 
-EventAxis will give users the ability to view a number of events per page by city. They will also be able to view a chart to see where the most events
-are happening so that they can get a bird's eye view of which cities have the most activity. 
+EventAxis is a progressive web application that will give users the ability to view a number of events per page by city. They will also be able to view a chart to see where the most events are happening so that they can get a bird's eye view of which cities have the most activity. 
+
+## Technologies Used 
+
+* React 
+* React Axios
+* Google Calendar API
+* Oauth Authentication Flow
+* Serverless Functions using AWS
+* Passes LightHouse PWA checklist
+* 
+* Built using TDD technique
 
 # MAIN FEATURES
 
@@ -95,7 +105,6 @@ Scenario 1: Show cached data when there’s no internet connection
 
 
 Scenario 2: Show error when user changes the settings (city, time range)
-
 
 * Given application is offline
 * When user changes the city, time range
