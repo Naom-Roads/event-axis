@@ -39,6 +39,7 @@ Scenario 3: When user's city is populated field for number of events will appear
 * When user clicks suggestion
 * Then field for entering number of events to be shown will appear
 
+<hr>
 
  FEATURE 2: SHOW/HIDE AN EVENT'S DETAILS
 
