@@ -3,6 +3,11 @@
 
 EventAxis is a progressive web application that will give users the ability to view a number of events per page by city. They will also be able to view a chart to see where the most events are happening so that they can get a bird's eye view of which cities have the most activity. 
 
+<img width="1369" alt="eventaxis" src="https://user-images.githubusercontent.com/44932790/158055283-7d91b0f4-d0a2-445e-854b-3c334d0cb669.png">
+
+
+
+
 ## Technologies Used 
 
 * React 
@@ -14,6 +19,7 @@ EventAxis is a progressive web application that will give users the ability to v
 * Built using TDD technique
 
 
+
 ## Key Features
 
 
@@ -23,8 +29,9 @@ EventAxis is a progressive web application that will give users the ability to v
 * User can display a particular number of events on page
 * User can view data regarding events on a visual chart
 
-
 <hr>
+
+![Wondershare UniConverter 13_000007](https://user-images.githubusercontent.com/44932790/158055571-5e03c3c5-2ba9-43a5-bc7c-252fcf75e5fb.GIF)
 
 ### User Stories:
 
