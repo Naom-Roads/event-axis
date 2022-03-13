@@ -31,7 +31,8 @@ EventAxis is a progressive web application that will give users the ability to v
 
 <hr>
 
-![Wondershare UniConverter 13_000008](https://user-images.githubusercontent.com/44932790/158055675-63b1b2ba-71a3-4352-9d4c-9c8a367c061d.GIF)
+
+![Wondershare UniConverter 13_000009](https://user-images.githubusercontent.com/44932790/158055784-ceef63b2-ad55-4d5d-8633-fb6d8183586c.GIF)
 
 
 ### User Stories:
